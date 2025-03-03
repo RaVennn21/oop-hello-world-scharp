@@ -1,4 +1,5 @@
 ﻿using HelloLib;
+using System.Globalization;
 
 namespace HelloWorld
 {
@@ -10,12 +11,14 @@ namespace HelloWorld
             string? name = Console.ReadLine();
             HelloPrinter printer = new HelloPrinter();
 
-            if (name == null)
+            if (string.IsNullOrEmpty(name))
             {
                 Console.WriteLine("Please write your name la!!!");
             }
-
-            printer.sayHello(name);
+            else
+            {
+                printer.sayHello(name);
+            }
         }
     }
 }
